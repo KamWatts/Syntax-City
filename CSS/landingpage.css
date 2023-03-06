@@ -1,0 +1,660 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Barlow+Condensed:wght@100&family=Cabin+Sketch:wght@700&family=Sono&display=swap');
+/* Font Family: Asap, Barlow Condensed, Cabin Sketch, Sono */
+:root {
+    --syn-color1: #565656;
+    --syn-color2: #3c3c3c;
+    --syn-color3: #2d2d2d;
+    --syn-color4: #1e1e1e;
+    --syn-color5: #9a1f00;
+}
+
+body {
+    background-image: linear-gradient(45deg,
+    rgba(15, 15, 15, 0.84), 
+    rgba(21, 20, 20, 0.95),
+    rgba(120, 120, 120, 0.63)), 
+    url('/images/sincity2.png');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navigation Bar */
+
+header {
+    height: 100px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 3;
+}
+
+header .navbar ul {
+    display: flex;
+    flex-direction: row;
+    font-family: Sono, sans-serif;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.navbar li {
+    margin: 1.5em;
+    /* border-right: 2px solid #9a1f00; */
+}
+
+#home:hover {
+    border-bottom: 2px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: larger;
+}
+
+#follow:hover {
+    border-bottom: 2px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: larger;
+}
+
+#templates:hover {
+    border-bottom: 2px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: larger;
+}
+
+#stories:hover {
+    border-bottom: 2px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: larger;
+}
+
+/* Blog name with subtext graphics */
+
+.container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    grid-template-areas: 
+    "blog-intro"
+    "blog-btn";
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+    
+.blog-intro { 
+    grid-area: blog-intro; 
+    align-self: center;
+    justify-self: center;
+    font-family: Sono, Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: bolder;
+    text-align: center;
+}
+.blog-intro .bold-red {
+    font-family: Cabin Sketch, Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: #9a1f00;
+    font-size: 130pt;
+}
+
+.blog-intro  .sub-text {
+    font-weight: lighter;
+    font-size: 12pt;
+    text-transform: lowercase;
+}
+
+/* Button animation */
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+}
+button.to-main-blog {
+    width: 12rem;
+    height: auto;
+}
+button.to-main-blog .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #9a1f00;
+    border-radius: 1.625rem;
+}
+button.to-main-blog .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+button.to-main-blog .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+button.to-main-blog .circle .icon.arrow::before {
+    position: absolute;
+    content: '';
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+button.to-main-blog .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Sono, sans-serif
+}
+button:hover .circle {
+    width: 100%;
+}
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+button:hover .button-text {
+    color: #fff;
+    font-size: 12pt;
+}
+
+@supports (display: grid) {
+body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: 
+    " main main" " main main ";
+   }
+
+.container {
+    align-self: center;
+    justify-self: center;
+    width: 100vw;
+   }
+
+   /*Blog Post card*/ 
+}
+.blog-card {
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    top: 98%;
+    left: 46%;
+    margin: -250px 0 0 -175px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display:flex;
+  
+}
+.blog-card.spring-fever {
+    background: url(/images/bw-codingpic.jpg) cover no-repeat;
+}
+.blog-card .color-overlay {
+    background: rgba(84, 104, 110, 0.4);
+    width: 250px;
+    height: 300px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+.blog-card .gradient-overlay {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    width: 350px;
+    height: 500px;
+    position: absolute;
+    top: 350px;
+    left: 0;
+    z-index: 15;
+}
+.blog-card:hover .color-overlay {
+    background: rgba(224, 45, 0, 0.8);
+}
+
+.title-content {
+    text-align: center;
+    align-content: center;
+    margin: 70px 0 0 0px;
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+h3 {
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: #9a1f00;
+    font-family: Sono, sans-serif;
+}
+
+.blog-card:hover h3 {
+    font-size: 23px;
+    letter-spacing: 0.1px;
+    color: #fff;
+    font-family: Sono, sans-serif;      
+}
+
+hr {
+    width: 50px;
+    height: 3px;
+    margin: 20px auto;
+    border: 0;
+    background: #fff;
+}
+
+.blog-card:hover hr {
+    width: 190px;
+    background:rgba(36, 42, 44, 0.9);
+    transition: ease-in 0.35s ;
+}
+.intro {
+    width: 170px;
+    margin: 0 auto;
+    color: #DCE3E7;
+    font-family: Barlow Condensed, serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 15px;
+}
+.card-info {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 50px;
+    color: #fff;
+    font-family: 'Droid Serif', serif;
+    font-style: 16px;
+    line-height: 24px;
+    z-index: 20;
+    opacity: 0;
+    transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+.blog-card:hover .comments {
+    color: #1e1e1e;
+}
+
+.blog-card:hover .date {
+    color: #1e1e1e;    
+}
+
+/* Small Screen Accessibility */
+@media screen and (min-width: 400px) and (max-width: 600px) {
+
+body {
+    background-image: linear-gradient(45deg,
+        rgba(15, 15, 15, 0.84), 
+        rgba(21, 20, 20, 0.95),
+        rgba(120, 120, 120, 0.63)), 
+        url('/images/sincity2.png');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    color: white;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+    
+    /* Navigation Bar */
+    
+header {
+    height: 40px;
+    position: absolute;
+    text-decoration: none;
+    z-index: 3;
+}
+    
+header .navbar ul {
+    display: flex;
+    flex-direction: row;
+    font-family: Sono, sans-serif;
+    list-style-type: none;
+}
+    
+a {
+    text-decoration: none;
+    color: inherit;
+}
+    
+    
+.navbar li {
+    margin: 0.5em;
+    /* border-right: 2px solid #9a1f00; */
+}
+    
+#home:hover {
+    border-bottom: 2px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: large;
+}
+    
+#follow:hover {
+    border-bottom: 1px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: large;
+}
+    
+#templates:hover {
+    border-bottom: 1px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: large;
+}
+    
+#stories:hover {
+    border-bottom: 2px solid #9a1f00;
+    border-right: 0;
+    transition: ease-in 0.4s;
+    text-shadow: #565656;
+    list-style-type: none;
+    font-size: larger;
+}
+    
+    /* Blog name with subtext graphics */
+    
+.container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    grid-row-gap: 10px;
+    grid-template-areas: 
+        "blog-intro"
+        "blog-btn";
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+        
+.blog-intro { 
+    grid-area: blog-intro; 
+    align-self: center;
+    justify-self: center;
+    font-family: Sono, Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.15em;
+    font-weight: bolder;
+    text-align: center;
+}
+.blog-intro .bold-red {
+    font-family: Cabin Sketch, Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: #9a1f00;
+    font-size: 100pt;
+}
+    
+.blog-intro  .sub-text {
+    font-weight: lighter;
+    font-size: 8pt;
+    text-transform: lowercase;
+}
+    
+    /* Button animation */
+    
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+}
+button.to-main-blog {
+    width: 12rem;
+    height: auto;
+}
+button.to-main-blog .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #9a1f00;
+    border-radius: 1.625rem;
+}
+button.to-main-blog .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+button.to-main-blog .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+button.to-main-blog .circle .icon.arrow::before {
+    position: absolute;
+    content: '';
+    top: -0.25rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+button.to-main-blog .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.55rem 0;
+    margin: 0 0 0 1.05rem;
+    color: #fff;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Sono, sans-serif
+}
+button:hover .circle {
+    width: 80%;
+}
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+button:hover .button-text {
+    color: #fff;
+    font-size: 7pt;
+}
+    
+@supports (display: grid) {
+
+body {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas: 
+        " main main" " main main ";
+}
+    
+.container {
+    align-self: center;
+    justify-self: center;
+    width: 100vw;
+}
+    
+       /*Blog Post card*/ 
+.blog-card {
+    width: 400px;
+    height: 200px;
+    position: relatuve;
+    top: 88%;
+    left: 35%;
+    padding: 0 aut0;
+    margin: -180px 0 0 -105px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+      
+}
+.blog-card.spring-fever {
+    background: url(/images/bw-codingpic.jpg) cover no-repeat;
+}
+.blog-card .color-overlay {
+    background: rgba(84, 104, 110, 0.4);
+    width: 450px;
+    height: 200px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+.blog-card .gradient-overlay {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 21%);
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    z-index: 15;
+}
+.blog-card:hover .color-overlay {
+    background: rgba(224, 45, 0, 0.8);
+}
+    
+.title-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+}
+h3 {
+    font-size: 16px;
+    color: #9a1f00;
+    font-family: Sono, sans-serif;
+}
+    
+.blog-card:hover h3 {
+    font-size: 15px;
+    letter-spacing: 0.1px;
+    color: #fff;
+    font-family: Sono, sans-serif;      
+}
+
+.blog-card:hover hr {
+    width: 90px;
+    background:rgba(36, 42, 44, 0.9);
+    transition: ease-in 0.35s ;
+}
+.intro {
+    color: #DCE3E7;
+    font-family: Barlow Condensed, serif;
+    font-size: 12px;
+    font-style: italic;
+}
+.card-info {
+    width: 100%;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 50px;
+    color: #fff;
+    font-family: 'Droid Serif', serif;
+    font-style: 16px;
+    line-height: 24px;
+    z-index: 20;
+    opacity: 0;
+    transition: bottom 0.3s, opacity 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+    
+.blog-card:hover .comments {
+    color: #1e1e1e;
+}
+    
+.blog-card:hover .date {
+    color: #1e1e1e;    
+        }
+    }
+}    
+    
