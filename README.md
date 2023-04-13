@@ -51,6 +51,3 @@ Quora: <https://www.quora.com/What-is-the-importance-of-documentation-in-program
 "Why Documentation is Very Important for Software Development"
 by Amit Agrawal
 Cisin: <https://www.cisin.com/coffee-break/technology/why-documentation-is-very-important-for-software-development.html>
-# Syntax-City-Blog
-# Syntax-City-Blog
-# Syntax-City
