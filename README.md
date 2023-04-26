@@ -12,6 +12,8 @@ All colors will be swatches from the Sin City movie. Text will be a mix between 
 
 The background will be dark with a opaque black/white linear gradient
 
+[Deployed Site](https://kamwatts.github.io/Syntax-City/)
+
 ## Documentation Resources
 
 1. <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap>
